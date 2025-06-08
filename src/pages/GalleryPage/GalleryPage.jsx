@@ -4,14 +4,14 @@ import './GalleryPage.css';
 
 // Mock data - replace with actual image paths or API data
 const galleryImages = [
-    { id: 1, src: "src/assets/kostya.jpg", alt: "+100500 ватт", caption: "Мощь" },
-    { id: 2, src: "src/assets/love.jpg", alt: "+10 ватт", caption: "Поддержка" },
-    { id: 3, src: "src/assets/ritsa.jpg", alt: "", caption: "Команда" },
-    { id: 4, src: "src/assets/vodopad.jpg", alt: "", caption: "Виды" },
-    { id: 5, src: "src/assets/zhopy.jpg", alt: "", caption: "другие Виды" },
-    { id: 6, src: "src/assets/shults.jpg", alt: "", caption: "подменный велосипед" },
-    { id: 7, src: "src/assets/trio.jpg", alt: "", caption: "Виды + другие Виды" },
-    { id: 8, src: "src/assets/hadsup.jpg", alt: "", caption: "ты не пройдешь" },
+    { id: 1, src: "../../assets/kostya.jpg", alt: "+100500 ватт", caption: "Мощь" },
+    { id: 2, src: "../../assets/love.jpg", alt: "+10 ватт", caption: "Поддержка" },
+    { id: 3, src: "../../assets/ritsa.jpg", alt: "", caption: "Команда" },
+    { id: 4, src: "../../assets/vodopad.jpg", alt: "", caption: "Виды" },
+    { id: 5, src: "../../assets/zhopy.jpg", alt: "", caption: "другие Виды" },
+    { id: 6, src: "../../assets/shults.jpg", alt: "", caption: "подменный велосипед" },
+    { id: 7, src: "../../assets/trio.jpg", alt: "", caption: "Виды + другие Виды" },
+    { id: 8, src: "../../assets/hadsup.jpg", alt: "", caption: "ты не пройдешь" },
 ];
 
 function GalleryItem({ image }) {
