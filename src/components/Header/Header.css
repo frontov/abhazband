@@ -1,0 +1,162 @@
+/* src/components/Header/Header.css */
+.app-header {
+    background-color: #111;
+    padding: 1rem 0; /* This contributes to the header's height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #e91e63;
+    /* Calculate approx height: (1rem * 2) for padding + logo/text height + 2px border
+       e.g., if 1rem = 16px, logo 1.8rem = ~29px. So, 16+29+16+2 = ~63px */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e91e63;
+    text-decoration: none;
+    font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    z-index: 1001; /* Ensure logo is above mobile menu if it overlaps */
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Desktop Navigation (default) */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Horizontal layout for desktop */
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active-link {
+    color: #ff4500;
+    border-bottom: 2px solid #ff4500;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none; /* Hidden by default, shown in media query */
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    cursor: pointer;
+    padding: 0.5rem; /* Clickable area */
+    z-index: 1005; /* Above other header content, below potential modals */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px; /* Width of the hamburger icon */
+    height: 25px; /* Height of the hamburger icon */
+    margin-left: auto; /* Pushes it to the right if other items are present */
+}
+
+.mobile-menu-toggle .hamburger-bar {
+    display: block;
+    width: 100%;
+    height: 3px; /* Thickness of bars */
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger animation to X when 'open' class is added */
+.mobile-menu-toggle.open .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Adjust translateY based on height and bar thickness */
+}
+.mobile-menu-toggle.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Adjust translateY */
+}
+
+
+/* Mobile Navigation Styles - Adjust breakpoint (768px) as needed */
+@media (max-width: 768px) {
+    .main-nav ul {
+        /* Initially hidden and prepared for mobile layout */
+        display: none;
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 100%; /* Position directly below the header. Assumes header height is consistent. */
+        /* Or use a fixed value like: top: 63px; /* Adjust this to match your header's exact height */
+        left: 0;
+        width: 100%;
+        background-color: #1c1c1c; /* Dark background for the dropdown */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-top: 1px solid #333;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        /* Animation for appearing */
+        transform: translateY(-10px); /* Start slightly up for a subtle drop effect */
+        opacity: 0;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        pointer-events: none; /* Prevent interaction when hidden */
+    }
+
+    .main-nav.mobile-open ul {
+        display: flex; /* Show when mobile menu is open */
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto; /* Allow interaction when open */
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-nav a {
+        display: block; /* Make links take full width */
+        padding: 1rem 1.5rem; /* Generous padding for touch targets */
+        width: 100%;
+        text-align: left; /* Or center, as you prefer */
+        border-bottom: 1px solid #333; /* Separator for links */
+    }
+    .main-nav li:last-child a {
+        border-bottom: none; /* No border for the last item */
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active-link {
+        background-color: #2a2a2a;
+        color: #ff4500;
+        border-bottom-color: #ff4500; /* Keep consistent active style if border is used */
+    }
+    .main-nav a.active-link { /* Ensure active link stands out */
+        border-left: 3px solid #ff4500; /* Example: highlight active link */
+        padding-left: calc(1.5rem - 3px);
+    }
+
+
+    .mobile-menu-toggle {
+        display: flex; /* Show hamburger button on mobile */
+    }
+}

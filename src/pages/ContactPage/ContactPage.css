@@ -1,0 +1,151 @@
+/* src/pages/ContactPage/ContactPage.css */
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #ccc;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contact-content {
+        grid-template-columns: 2fr 1fr; /* Form takes more space */
+    }
+}
+
+.contact-form-container {
+    background-color: #252525;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f0f0f0;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't expand element size */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.5);
+}
+
+.submit-button {
+    background-color: #e91e63;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #c2185b;
+}
+
+.success-message {
+    background-color: #28a74520; /* Green with transparency */
+    color: #a3d9b1;
+    border: 1px solid #28a745;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #dc354520; /* Red with transparency */
+    color: #f5c6cb;
+    border: 1px solid #dc3545;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+.contact-info {
+    background-color: #202020;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #3a3a3a;
+}
+
+.contact-info h2 {
+    color: #ff4500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #ff4500;
+}
+.contact-info a:hover {
+    color: #e91e63;
+    text-decoration: underline;
+}
+
+.contact-info .social-link {
+    display: inline-block;
+    margin-right: 10px;
+    /* Add icons later if desired */
+}
+
+.contact-info .disclaimer {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 1.5rem;
+    border-top: 1px dashed #444;
+    padding-top: 1rem;
+}

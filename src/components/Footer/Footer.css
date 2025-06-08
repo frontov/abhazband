@@ -1,0 +1,24 @@
+/* src/components/Footer/Footer.css */
+.app-footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 2px solid #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.app-footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.app-footer a {
+    color: #ff4500;
+}
+
+.app-footer a:hover {
+    color: #e91e63;
+}
